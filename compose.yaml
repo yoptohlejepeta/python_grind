@@ -1,0 +1,11 @@
+version: "3"
+services:
+  django:
+    build: .
+    ports:
+      - "8000:8000"
+    command: python test_django/manage.py runserver 0.0.0.0:8000
+  postgredb:
+    image: postgres
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
