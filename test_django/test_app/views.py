@@ -6,4 +6,4 @@ from django.http import HttpResponse
 
 def index(request):
     # return HttpResponse("Hello, world. You're at the polls index.")
-    return render(request, 'test_app/home.html')
+    return render(request, 'home.html')
