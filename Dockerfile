@@ -2,8 +2,8 @@ FROM python:3.9.0
 
 
 # Set work directory
-# WORKDIR /test_django
-WORKDIR /
+
+# WORKDIR /
 
 # Install dependencies
 COPY ./requirements.txt .

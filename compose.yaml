@@ -2,7 +2,10 @@ version: "3"
 services:
   django:
     build: .
-    command: python test_django/manage.py runserver 0.0.0.0:8000
+    command: bash -c  
+    'python test_django/manage.py makemigrations && 
+    python test_django/manage.py migrate && 
+    python test_django/manage.py runserver 0.0.0.0:8000'
     ports:
       - 8000:8000
     depends_on:
@@ -11,3 +14,5 @@ services:
     image: postgres
     environment:
       - "POSTGRES_HOST_AUTH_METHOD=trust"
+    ports:
+      - 5432:5432
